@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gurwinder Singh | 3D Generalist &amp; Multimedia Artist</title>
+  <meta name="description" content="Explore the creative portfolio of Gurwinder Singh, a 3D Generalist and Multimedia Artist specializing in 3D modeling, architectural environments, animation, and visual storytelling.">
+  <meta name="theme-color" content="#08090C">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gurwinder Singh | 3D Generalist &amp; Multimedia Artist">
+  <meta property="og:description" content="3D modeling, architectural environments, animation, video editing and visual storytelling.">
+  <meta property="og:image" content="projects/architectural-environment/wide-view.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gurwinder Singh | 3D Generalist &amp; Multimedia Artist">
+  <meta name="twitter:description" content="3D modeling, architectural environments, animation, video editing and visual storytelling.">
+  <meta name="twitter:image" content="projects/architectural-environment/wide-view.jpg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Cursor (desktop only) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__brand" aria-label="Gurwinder Singh — home">
+      <svg class="monogram" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 58 20v24L32 58 6 44V20Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M18 26l14 7 14-7M32 33v14M22 22l10-5 10 5" fill="none" stroke="#8EBBFF" stroke-width="2.5" stroke-linejoin="round"/></svg>
+      <span class="nav__name" data-bind="artist.name"></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navLinks"></ul>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home" aria-label="Introduction">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__arch" aria-hidden="true">
+        <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="archG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#252A32" stop-opacity=".9"/><stop offset="1" stop-color="#08090C" stop-opacity="0"/></linearGradient>
+            <linearGradient id="edgeG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8EBBFF" stop-opacity="0"/><stop offset=".5" stop-color="#8EBBFF" stop-opacity=".55"/><stop offset="1" stop-color="#8EBBFF" stop-opacity="0"/></linearGradient>
+          </defs>
+          <!-- abstract wing-like architectural silhouette -->
+          <g class="parallax" data-depth="0.15">
+            <path d="M0 700V430l120-40 70 60 90-150 80 120 120-60 120 40 20-90 20 90 120-40 120 60 80-120 90 150 70-60 120 40v270Z" fill="url(#archG)" opacity=".75"/>
+          </g>
+          <g class="parallax" data-depth="0.3">
+            <path d="M600 210 L470 300 L520 300 L560 270 L600 330 L640 270 L680 300 L730 300Z" fill="none" stroke="url(#edgeG)" stroke-width="1.2"/>
+            <path d="M600 160 L330 330 M600 160 L870 330" stroke="url(#edgeG)" stroke-width=".8"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero__sweep" aria-hidden="true"></div>
+      <div class="hero__vignette" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="hero__kicker mono" id="heroKicker"></p>
+        <h1 class="hero__name" id="heroName" aria-label="Gurwinder Singh"></h1>
+        <p class="hero__headline" id="heroHeadline"></p>
+        <p class="hero__desc" id="heroDesc"></p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary magnetic" id="heroCta1" href="#work"><span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost magnetic" id="heroCta2" href="#showreel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg><span></span></a>
+        </div>
+      </div>
+      <div class="hero__meta mono container" aria-hidden="true">
+        <span>Portfolio — 2026</span>
+        <span class="hero__scroll"><i></i>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow mono"><span>01</span> About</p>
+          <h2 class="section__title split" id="aboutTitle" data-bind="about.heading"></h2>
+          <p class="section__sub" data-bind="about.subheading"></p>
+        </header>
+        <div class="about__grid" id="aboutGrid"></div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section work" id="work" aria-labelledby="workTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow mono"><span>02</span> Work</p>
+          <h2 class="section__title split" id="workTitle" data-bind="works.heading"></h2>
+          <p class="section__sub" data-bind="works.subheading"></p>
+        </header>
+        <div class="work__grid" id="workGrid"></div>
+      </div>
+    </section>
+
+    <!-- SOFTWARE -->
+    <section class="section software" id="software" aria-labelledby="softTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow mono"><span>03</span> Software</p>
+          <h2 class="section__title split" id="softTitle" data-bind="software.heading"></h2>
+          <p class="section__sub" data-bind="software.subheading"></p>
+        </header>
+        <div class="soft__grid" id="softGrid"></div>
+      </div>
+    </section>
+
+    <!-- SHOWREEL -->
+    <section class="section showreel" id="showreel" aria-labelledby="reelTitle">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow mono"><span>04</span> Showreel</p>
+          <h2 class="section__title split" id="reelTitle" data-bind="showcase.heading"></h2>
+          <p class="section__sub" data-bind="showcase.subheading"></p>
+        </header>
+        <div class="reel__grid" id="reelGrid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contactTitle">
+      <div class="contact__bg" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container contact__inner">
+        <p class="eyebrow mono"><span>05</span> Contact</p>
+        <h2 class="contact__title split" id="contactTitle" data-bind="contact.heading"></h2>
+        <p class="contact__text" data-bind="contact.text"></p>
+        <div class="contact__ctas">
+          <a class="btn btn--primary magnetic" id="mailBtn"><span data-bind="contact.primaryCta"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost magnetic" id="liBtn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.6 8.65 22 11.2 22 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21h-4z"/></svg><span data-bind="contact.secondaryCta"></span></a>
+        </div>
+        <a class="contact__email mono" id="mailText"></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> <span data-bind="artist.name"></span></span>
+      <span class="mono">3D Generalist · Multimedia Artist · Video Editor</span>
+      <a href="#home" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Project presentation -->
+  <div class="project" id="project" role="dialog" aria-modal="true" aria-labelledby="projTitle" hidden>
+    <button class="project__close" id="projClose" aria-label="Close project">
+      <span class="mono">Close</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="project__scroll" id="projScroll"></div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lb__btn lb__close" id="lbClose" aria-label="Close viewer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <button class="lb__btn lb__prev" id="lbPrev" aria-label="Previous image"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <figure class="lb__figure">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap" class="mono"></figcaption>
+    </figure>
+    <button class="lb__btn lb__next" id="lbNext" aria-label="Next image"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
